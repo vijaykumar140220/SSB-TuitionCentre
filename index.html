@@ -184,6 +184,30 @@
     opacity: 1;
     transform: translateY(0);
   }
+  .section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FFD700;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  background-color: #FFD700;
+  transition: width 0.4s ease-in-out;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
@@ -221,41 +245,57 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-section" id="home">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1>Welcome to SSB Tuition Centre</h1>
-    <p>Empowering students from Class 1 to Engineering in Maths & Computer Science</p>
+
+<!-- HERO SECTION -->
+<section class="hero-section position-relative text-white d-flex align-items-center" id="home" style="background: url('background.jpg') no-repeat center center/cover; min-height: 100vh;">
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+
+  <div class="container text-center position-relative z-1 py-5">
+    <h1 class="display-4 fw-bold mb-3">Welcome to <span class="text-primary">SSB Tuition Centre</span></h1>
+    <p class="lead mb-3">Where learning meets excellence. From foundational classes (1–5) to advanced university-level subjects.</p>
+    <p class="mb-4">We specialize in Maths and Computer Science to help students excel with confidence. Guidance for CBSE, State Board, and Engineering students with personalized attention and result-oriented teaching.</p>
+    <a href="#courses" class="btn btn-outline-light btn-lg px-4">Explore Courses</a>
   </div>
 </section>
+
+
 
 <!-- About Section -->
 <section id="about" style="background-image: url('about.jpg'); min-height: 100vh;" class="d-flex align-items-center">
   <div class="about-overlay" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
-  <div class="container text-center" style="position: relative; z-index: 2;">
-    <h2>About Us</h2>
-    <p>SSB Tuition Centre (Start Self Believing) is a passionate initiative dedicated to supporting school and college students in excelling in Computer Science and Mathematics. Our experienced team delivers focused coaching from Class 6 to 12 and beyond.</p>
+  <div class="container text-center text-white" style="position: relative; z-index: 2;">
+    <h2 class="section-title">📘 About Us</h2>
+    <p>
+      <strong>SSB Tuition Centre</strong> (Start Self Believing) is more than just a tuition hub — it's a nurturing space where students are empowered to build strong academic foundations and boost self-confidence.
+    </p>
+    <p>
+      We offer personalized coaching in <strong>Mathematics</strong> and <strong>Computer Science</strong> for students from <strong>Class 1 to 12</strong> and also support <strong>UG & PG courses</strong>. Whether you're preparing for board exams, learning coding, or aiming for academic excellence, our experienced educators provide clear guidance, consistent support, and hands-on practice.
+    </p>
+    <p>
+      With a track record of helping students achieve top results, SSB Tuition Centre stands as a trusted name in education. Join us and take the next step in your learning journey — with confidence, clarity, and care.
+    </p>
   </div>
 </section>
 
+
 <!-- Courses Section -->
-<section id="courses" style="background-image: url('couses.png');">
-  <div class="container text-center">
-    <h2>Courses Offered</h2>
-    <div class="course-card">Class 1–5: Basic Maths & Logic Building</div>
-    <div class="course-card">Class 6–10: Maths & Computer Basics</div>
-    <div class="course-card">Class 11–12: Maths, Python, C++, Java</div>
-    <div class="course-card">UG (B.Sc, BCA, B.E): DS, DBMS, Web Dev, Projects</div>
-    <div class="course-card">PG (M.Sc, MCA): Advanced Coding, ML Basics</div>
-    <div class="course-card">Engineering: Data Structures, Algorithms, Web Tech</div>
+<section id="courses" style="background-image: url('couses.png'); background-size: cover; background-position: center;">
+  <div class="container text-center py-5">
+    <h2 class="section-title">📚 Courses Offered</h2>
+
+    <div class="course-card">Class 1–5: All Subjects – CBSE, State Board</div>
+    <div class="course-card">Class 6–10: All Subjects – CBSE, State Board</div>
+    <div class="course-card">Class 11–12: Maths, Accounts – CBSE, State Board</div>
+    <div class="course-card">UG (B.Sc CS, BCA, B.E - CSE): Core subjects in Computer Science and Mathematics</div>
+    <div class="course-card">PG (M.Sc CS, MCA): Advanced topics in Computer Science and Mathematics</div>
   </div>
 </section>
+
 
 <!-- Faculty Section -->
 <section id="faculty" style="background-image: url('faculty.png');">
   <div class="container text-center">
-    <h2>Our Faculty</h2>
+    <h2 class="section-title">👨‍🏫 Our Faculty</h2>
     <div class="faculty-card">👨‍🏫 Mr. Naveen Kumar, M.Sc., B.Ed., PGDCA</div>
     <div class="faculty-card">👩‍🏫 Ms. Hema, M.Sc., B.Ed.</div>
     <div class="faculty-card">🧑‍🏫 Mr. Arivazhagan, M.Sc., B.Ed.</div>
@@ -267,7 +307,7 @@
 <section id="schedule" style="background-image: url('Schedule.png');">
   <div class="schedule-overlay"></div>
   <div class="container text-center schedule-content">
-    <h2>Schedule / Timings</h2>
+    <h2 class="section-title">📅 Schedule / Timings</h2>
     <p><strong>Monday – Saturday:</strong> 4:30 PM – 8:30 PM</p>
     <p><strong>Sunday:</strong> 10:00 AM – 2:00 PM</p>
   </div>
@@ -275,7 +315,8 @@
 
 <section id="contact" class="fade-section py-5 text-white" style="min-height: 100vh; background-image: url('contact.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
   <div class="container text-center" style="background-color: rgba(0, 0, 0, 0.6); padding: 40px; border-radius: 10px;">
-    <h2 class="mb-4">Contact Us</h2>
+    <h2 class="section-title">📞 Contact Us</h2>
+
     <form id="contactForm" class="mx-auto" style="max-width: 600px;">
       <div class="mb-3 text-start">
         <label for="name" class="form-label">Name *</label>
